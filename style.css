@@ -151,3 +151,66 @@ main {
     list-style: disc inside;
     padding-left: 0;
 }
+
+/* Move the guessing game to the left side without shifting main content */
+#guessing-game {
+    position: fixed;
+    top: 7rem;
+    left: 1.5rem;
+    width: 270px;
+    background: #faf5ff;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(124,58,237,0.13);
+    padding: 1.5rem 1rem 1rem 1rem;
+    z-index: 200;
+    max-height: 70vh;
+    overflow-y: auto;
+    border: 1.5px solid #c4b5fd;
+    text-align: center;
+}
+
+#guessing-game input[type="number"] {
+    width: 60%;
+    padding: 0.4em;
+    border-radius: 6px;
+    border: 1px solid #a78bfa;
+    margin-bottom: 0.5em;
+}
+
+#guessing-game button {
+    background: #7c3aed;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 0.4em 1em;
+    margin-left: 0.5em;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background 0.15s;
+}
+#guessing-game button:hover {
+    background: #4b2996;
+}
+
+#guess-feedback {
+    margin-top: 0.7em;
+    font-weight: 600;
+    min-height: 1.5em;
+}
+
+#guess-history {
+    margin-top: 0.5em;
+    font-size: 0.95em;
+    color: #6d28d9;
+}
+
+@media (max-width: 900px) {
+    #guessing-game {
+        position: static;
+        width: 100%;
+        max-width: 100%;
+        margin-bottom: 2rem;
+        box-shadow: none;
+        left: 0;
+    }
+}
