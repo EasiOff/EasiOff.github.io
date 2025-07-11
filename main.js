@@ -43,7 +43,7 @@ function updateTimers() {
         if (!project.deadline) {
           timer.textContent = 'Deadline: TBD';
         } else {
-          // Convert now to America/Los_Angeles (PST/PDT)
+          // Convert now to PST/PDT
           const now = new Date();
           // Get the current time in PST/PDT
           const nowPST = new Date(now.toLocaleString('en-US', { timeZone: 'America/Los_Angeles' }));
