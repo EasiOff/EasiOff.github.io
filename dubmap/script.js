@@ -15,8 +15,8 @@ let displayTime = "9:41";
 
 const screenBackgrounds = {
 	journey: {
-		image: "images/onboardimg6.jpg",
-		opacity: 0.42
+		image: "images/JourneyMapimg.jpg",
+		opacity: 0.08
 	},
 	apply: {
 		image: "images/onboardimg4.jpg",
@@ -92,8 +92,9 @@ const questionData = {
 	}
 };
 
-function logoMarkup() {
-	return '<div class="ob-logo"><img src="images/dubmap_logo.png" alt="" class="ob-logo-image" aria-hidden="true"><span class="ob-logo-word">DubMap</span></div>';
+function logoMarkup(variant = "default") {
+	const logoImage = variant === "journey" ? "images/dubmap_logo2.png" : "images/dubmap_logo.png";
+	return `<div class="ob-logo"><img src="${logoImage}" alt="" class="ob-logo-image" aria-hidden="true"><span class="ob-logo-word">DubMap</span></div>`;
 }
 
 function statusMarkup() {
@@ -136,7 +137,7 @@ function renderBottomNav(activeKey) {
 
 function renderJourneyScreen() {
 	const routeHeight = 680;
-	const nodeXPositions = [73, 68, 74, 64, 26, 20, 26];
+	const nodeXPositions = [69, 64, 70, 60, 30, 24, 30];
 	const nodeYPositions = [64, 146, 228, 320, 420, 510, 600];
 	const nodes = timelineNodes.map((node, idx) => {
 		const x = nodeXPositions[idx] || 50;
@@ -145,7 +146,7 @@ function renderJourneyScreen() {
 	});
 
 	const activeNode = nodes.find((node) => node.active) || null;
-	const bonusPoint = activeNode ? { x: activeNode.x - 12, y: activeNode.y + 52 } : null;
+	const bonusPoint = activeNode ? { x: activeNode.x - 10, y: activeNode.y + 52 } : null;
 
 	const routePoints = [];
 	nodes.forEach((node) => {
@@ -198,8 +199,8 @@ function renderJourneyScreen() {
 				<header class="ob-feature-header">
 					<p class="ob-feature-kicker">Journey Map</p>
 					<div class="ob-journey-brand">
-						${logoMarkup()}
-						<span class="ob-bell">&#128276;</span>
+						${logoMarkup("journey")}
+						<img src="images/bell.png" alt="Notifications" class="ob-bell-icon">
 					</div>
 				</header>
 				<section class="ob-surface ob-map-topcard">

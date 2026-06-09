@@ -760,7 +760,8 @@ body {
 }
 
 .ob-screen-journey .ob-feature-bg {
-	opacity: 0.4;
+	background-image: url("images/JourneyMapimg.jpg");
+	opacity: 0.14;
 	filter: grayscale(0.16);
 }
 
@@ -793,7 +794,7 @@ body {
 .ob-screen-journey .ob-logo-image {
 	width: 1em;
 	height: 1em;
-	filter: brightness(0) saturate(100%) invert(47%) sepia(75%) saturate(1864%) hue-rotate(227deg) brightness(97%) contrast(93%);
+	filter: none;
 }
 
 .ob-screen-journey .ob-logo-word {
@@ -805,6 +806,13 @@ body {
 	font-size: 1.05rem;
 	color: #4f5565;
 	line-height: 1;
+}
+
+.ob-bell-icon {
+	width: 18px;
+	height: 18px;
+	object-fit: contain;
+	flex-shrink: 0;
 }
 
 .ob-map-topcard {
