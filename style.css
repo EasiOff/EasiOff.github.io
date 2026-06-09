@@ -1,216 +1,39 @@
 body {
-    font-family: 'Segoe UI', Arial, sans-serif;
-    background: #f5f3fa;
-    color: #2d133b;
+    font-family: "Segoe UI", Arial, sans-serif;
     margin: 0;
-    padding: 0;
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    background: #f5f7fb;
+    color: #1f2937;
 }
 
-header {
-    background: linear-gradient(90deg, #7c3aed 0%, #a78bfa 100%);
-    color: #fff;
-    padding: 2rem 0 1rem 0;
-    text-align: center;
-    margin-bottom: 0;
-}
-
-#intro {
-    background: #ede9fe;
-    margin: 0 auto 2rem auto;
-    padding: 1.5rem 2rem;
-    max-width: 700px;
-    border-radius: 10px;
-    box-shadow: 0 2px 8px rgba(124,58,237,0.07);
-    text-align: center;
-}
-
-main {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 1rem;
-}
-
-h1, h2, h3 {
-    font-weight: 700;
-    margin-top: 0;
-}
-
-.projects-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1.5rem;
-    justify-content: center;
-    margin-bottom: 2rem;
-}
-
-.project-box {
-    background: #faf5ff;
-    border-radius: 10px;
-    box-shadow: 0 2px 8px rgba(124,58,237,0.10);
-    padding: 1.5rem 1.2rem;
-    min-width: 220px;
-    max-width: 300px;
-    flex: 1 1 220px;
-    transition: transform 0.15s, box-shadow 0.15s;
-    border: 1.5px solid #c4b5fd;
-}
-.project-box:hover {
-    transform: translateY(-5px) scale(1.03);
-    box-shadow: 0 6px 18px rgba(124,58,237,0.18);
-    border-color: #a78bfa;
-}
-
-footer {
-    background: linear-gradient(90deg, #7c3aed 0%, #a78bfa 100%);
-    color: #fff;
-    padding: 2rem 0 1rem 0;
-    margin-top: 3rem;
-    text-align: center;
-}
-
-#contact-info ul {
-    list-style: none;
-    padding: 0;
-    margin: 0 auto;
-    display: inline-block;
-    text-align: left;
-}
-#contact-info li {
-    margin-bottom: 0.5rem;
-}
-#contact-info a {
-    color: #4b2996; /* A deeper, more visible purple */
-    text-decoration: underline;
-    font-weight: 500;
-    transition: color 0.15s;
-}
-#contact-info a:hover {
-    color: #7c3aed; /* Brighter purple on hover */
-    text-decoration: underline;
-}
-
-#upcoming-projects {
-    position: fixed;
-    top: 7rem;
-    right: 1.5rem;
-    width: 270px;
-    background: transparent;
-    border-radius: 0;
-    box-shadow: none;
-    padding: 0;
-    z-index: 100;
-    max-height: 70vh;
-    overflow-y: auto;
-    border: none;
-}
-
-#upcoming-projects h2 {
-    text-align: center;
-    font-size: 1.2rem;
-    margin-bottom: 1rem;
-}
-
-#upcoming-projects .projects-container {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    margin-bottom: 0;
-}
-
-@media (max-width: 900px) {
-    #upcoming-projects {
-        position: static;
-        width: 100%;
-        max-width: 100%;
-        margin-bottom: 2rem;
-        box-shadow: none;
-    }
-}
-
-main {
-    margin-right: 320px;
-    /* Ensure main content doesn't overlap with the left pocket */
-    box-sizing: border-box;
-}
-
-@media (max-width: 900px) {
-    main {
-        margin-left: 0;
-    }
-}
-
-#skills {
-    max-width: 700px;
-    margin: 0 auto 2rem auto;
-    padding: 1.5rem 2rem;
-    background: #fff;
-    border-radius: 10px;
-    box-shadow: 0 2px 8px rgba(124,58,237,0.07);
-}
-#skills ul {
-    list-style: disc inside;
-    padding-left: 0;
-}
-
-/* Move the guessing game to the left side without shifting main content */
-#guessing-game {
-    position: fixed;
-    top: 7rem;
-    left: 1.5rem;
-    width: 270px;
-    background: #faf5ff;
+.projects-page {
+    width: min(640px, calc(100vw - 32px));
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
     border-radius: 12px;
-    box-shadow: 0 2px 8px rgba(124,58,237,0.13);
-    padding: 1.5rem 1rem 1rem 1rem;
-    z-index: 200;
-    max-height: 70vh;
-    overflow-y: auto;
-    border: 1.5px solid #c4b5fd;
-    text-align: center;
+    padding: 24px;
 }
 
-#guessing-game input[type="number"] {
-    width: 60%;
-    padding: 0.4em;
-    border-radius: 6px;
-    border: 1px solid #a78bfa;
-    margin-bottom: 0.5em;
+h1 {
+    margin: 0 0 16px;
+    font-size: 1.6rem;
 }
 
-#guessing-game button {
-    background: #7c3aed;
-    color: #fff;
-    border: none;
-    border-radius: 6px;
-    padding: 0.4em 1em;
-    margin-left: 0.5em;
-    cursor: pointer;
+ul {
+    margin: 0;
+    padding-left: 20px;
+    display: grid;
+    gap: 10px;
+}
+
+a {
+    color: #1d4ed8;
+    text-decoration: none;
     font-weight: 600;
-    transition: background 0.15s;
-}
-#guessing-game button:hover {
-    background: #4b2996;
 }
 
-#guess-feedback {
-    margin-top: 0.7em;
-    font-weight: 600;
-    min-height: 1.5em;
-}
-
-#guess-history {
-    margin-top: 0.5em;
-    font-size: 0.95em;
-    color: #6d28d9;
-}
-
-@media (max-width: 900px) {
-    #guessing-game {
-        position: static;
-        width: 100%;
-        max-width: 100%;
-        margin-bottom: 2rem;
-        box-shadow: none;
-        left: 0;
-    }
+a:hover {
+    text-decoration: underline;
 }

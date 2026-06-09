@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+	<meta name="theme-color" content="#0a1d3c">
+	<title>DubMap</title>
+	<link rel="stylesheet" href="style.css">
+	<script src="script.js" defer></script>
+</head>
+<body>
+	<!-- Ambient background layer -->
+	<div class="aurora" aria-hidden="true"></div>
+
+	<!-- Device frame -->
+	<main class="phone" role="application" aria-label="DubMap">
+		<!-- Static phone visuals -->
+		<div class="wallpaper" aria-hidden="true"></div>
+		<div class="dynamic-island" aria-hidden="true"></div>
+
+		<!-- App onboarding / feature flow mount -->
+		<section class="onboarding" id="onboarding" aria-label="App onboarding">
+			<div class="ob-stage" id="obStage"></div>
+		</section>
+	</main>
+</body>
+</html>
