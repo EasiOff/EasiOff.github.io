@@ -8,7 +8,7 @@ const questionSelections = {
 	q2: new Set(),
 	q3: new Set()
 };
-const steps = ["splash", "hero", "intro", "q1", "q2", "q3", "lang", "welcome", "journey", "apply", "all"];
+const steps = ["splash", "hero", "intro", "q1", "q2", "q3", "lang", "welcome", "journey", "apply", "all", "mentors", "profile"];
 let stepIndex = 0;
 let primaryLanguage = "";
 let displayTime = "9:41";
@@ -174,10 +174,11 @@ function renderJourneyScreen() {
 			node.active ? "is-active" : "",
 			node.locked ? "is-locked" : ""
 		].filter(Boolean).join(" ");
+		const nodeAction = node.active ? ' data-action="go-apply"' : "";
 		const marker = node.complete ? "&#10003;" : node.locked ? "&#128274;" : node.active ? "" : "&#9679;";
 
 		return `
-			<li class="${classes}" style="--node-x:${node.x}%; --node-y:${node.y}px;">
+			<li class="${classes}" style="--node-x:${node.x}%; --node-y:${node.y}px;"${nodeAction}>
 				<span class="ob-map-bubble">${marker}</span>
 				<span class="ob-map-label">${node.label}</span>
 			</li>
@@ -282,6 +283,18 @@ function renderAllScholarshipsScreen() {
 				</div>
 				<ul class="ob-list-surface">${rows}</ul>
 				${renderBottomNav("journey")}
+			</div>
+		</div>
+	`;
+}
+
+function renderBlankTabScreen(activeKey) {
+	obStage.innerHTML = `
+		<div class="ob-screen ob-screen-feature">
+			${statusMarkup()}
+			<div class="ob-feature-bg" aria-hidden="true"></div>
+			<div class="ob-feature-shell">
+				${renderBottomNav(activeKey)}
 			</div>
 		</div>
 	`;
@@ -449,6 +462,16 @@ function renderOnboarding() {
 		return;
 	}
 
+	if (step === "mentors") {
+		renderBlankTabScreen("mentors");
+		return;
+	}
+
+	if (step === "profile") {
+		renderBlankTabScreen("profile");
+		return;
+	}
+
 	renderQuestion(step);
 }
 
@@ -462,14 +485,19 @@ onboarding.addEventListener("click", (event) => {
 		return;
 	}
 
-	const action = target.dataset.action;
+	const actionSource = target.closest("[data-action]");
+	if (!(actionSource instanceof HTMLElement)) {
+		return;
+	}
+
+	const action = actionSource.dataset.action;
 	if (!action) {
 		return;
 	}
 
 	if (action === "toggle") {
-		const stepKey = target.dataset.step;
-		const optionIndex = Number(target.dataset.index);
+		const stepKey = actionSource.dataset.step;
+		const optionIndex = Number(actionSource.dataset.index);
 		const selected = questionSelections[stepKey];
 
 		if (!selected) {
@@ -531,6 +559,18 @@ onboarding.addEventListener("click", (event) => {
 
 	if (action === "nav-journey") {
 		stepIndex = steps.indexOf("journey");
+		renderOnboarding();
+		return;
+	}
+
+	if (action === "nav-mentors") {
+		stepIndex = steps.indexOf("mentors");
+		renderOnboarding();
+		return;
+	}
+
+	if (action === "nav-profile") {
+		stepIndex = steps.indexOf("profile");
 		renderOnboarding();
 	}
 });

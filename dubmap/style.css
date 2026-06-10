@@ -943,6 +943,10 @@ body {
 	box-shadow: 0 12px 16px rgba(54, 42, 88, 0.45);
 }
 
+.ob-map-node.is-active {
+	cursor: pointer;
+}
+
 .ob-map-node.is-active .ob-map-label {
 	color: #452d95;
 }
