@@ -132,15 +132,15 @@ body {
 	width: 16px;
 	height: 10px;
 	display: inline-block;
-	background: url("images/wifi.png") center / contain no-repeat;
+	background: url("images/blackwifi.png") center / contain no-repeat;
 }
 
 .ob-screen-question .icon-wifi,
 .ob-screen-hero .icon-wifi,
 .ob-screen-intro .icon-wifi,
 .ob-screen-welcome .icon-wifi,
-.ob-screen-feature .icon-wifi {
-	background-image: url("images/blackwifi.png");
+.ob-screen-splash .icon-wifi {
+	background-image: url("images/wifi.png");
 }
 
 .icon-battery {
@@ -1340,9 +1340,16 @@ body {
 	border: 1px solid #d7d9e3;
 	border-radius: 999px;
 	background: #f7f8fb;
-	color: #8a90a0;
 	cursor: pointer;
-	font-size: 0.78rem;
+	display: grid;
+	place-items: center;
+}
+
+.ob-mentor-save-icon {
+	width: 14px;
+	height: 14px;
+	object-fit: contain;
+	display: block;
 }
 
 .ob-mentor-section {

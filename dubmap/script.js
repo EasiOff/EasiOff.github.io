@@ -542,7 +542,7 @@ function renderMentorsScreen() {
 					<p class="ob-mentor-meta">${mentor.major}</p>
 				</div>
 				<button type="button" class="ob-mentor-view" data-action="mentor-open" data-index="${index}">View profile</button>
-				<button type="button" class="ob-mentor-save" aria-label="Save mentor">&#9783;</button>
+				<button type="button" class="ob-mentor-save" aria-label="Save mentor"><img src="images/addicon.png" alt="" class="ob-mentor-save-icon"></button>
 			</div>
 		`;
 	}).join("");
