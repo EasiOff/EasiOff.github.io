@@ -260,7 +260,7 @@ function renderJourneyScreen() {
 
 	const bonusMarkup = bonusPoint ? `
 		<li class="ob-map-node is-bonus" style="--node-x:${bonusPoint.x}%; --node-y:${bonusPoint.y}px;">
-			<span class="ob-map-bubble ob-bonus-bubble">&#10047;</span>
+			<span class="ob-map-bubble ob-bonus-bubble"><img src="images/bonus node.png" alt="" class="ob-bonus-node-icon"></span>
 			<span class="ob-map-label">Bonus</span>
 		</li>
 	` : "";

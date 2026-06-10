@@ -902,6 +902,7 @@ body {
 
 .ob-map-node.is-bonus {
 	z-index: 3;
+	transform: translate(calc(-50% - 2px), -50%);
 }
 
 .ob-map-bubble {
@@ -992,11 +993,16 @@ body {
 	min-width: 34px;
 	min-height: 34px;
 	aspect-ratio: 1 / 1;
-	font-size: 0.98rem;
-	background: #f1e7ff;
-	border-color: #a989f3;
-	color: #825ce4;
-	box-shadow: 0 7px 12px rgba(93, 60, 180, 0.28);
+	background: transparent;
+	border: 0;
+	box-shadow: none;
+}
+
+.ob-bonus-node-icon {
+	width: 44px;
+	height: 44px;
+	object-fit: contain;
+	display: block;
 }
 
 .ob-map-node.is-bonus .ob-map-label {
