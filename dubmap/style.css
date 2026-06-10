@@ -27,6 +27,23 @@ body {
 	overflow: hidden;
 }
 
+.prototype-note {
+	position: fixed;
+	left: 50%;
+	bottom: 14px;
+	transform: translateX(-50%);
+	font-size: 0.76rem;
+	line-height: 1.2;
+	color: rgba(12, 22, 40, 0.72);
+	background: rgba(255, 255, 255, 0.58);
+	border: 1px solid rgba(255, 255, 255, 0.7);
+	border-radius: 999px;
+	padding: 6px 12px;
+	backdrop-filter: blur(6px);
+	z-index: 9;
+	pointer-events: none;
+}
+
 .aurora {
 	position: fixed;
 	inset: -30vh -20vw;
